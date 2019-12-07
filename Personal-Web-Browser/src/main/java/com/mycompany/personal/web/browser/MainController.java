@@ -26,16 +26,18 @@ public class MainController implements Initializable {
     String addressLink;
     
     @FXML
-    WebView web;
+    private WebView web;
     
     WebEngine engine;
     
+    @FXML
     public void go(ActionEvent event)
     {
         addressLink = addressBar.getText();
         engine.load(httpLink+addressLink);
     }
-        
+    
+    @FXML
     public void pressAddressBar(KeyEvent key)
     {
         if (key.getCode().equals(KeyCode.ENTER))
@@ -45,11 +47,13 @@ public class MainController implements Initializable {
         }
     }
     
+    @FXML
     public void refresh(ActionEvent event)
     {
         web.getEngine().reload();
     }
     
+    @FXML
     public void pressWeb(KeyEvent key)
     {      
         if (key.getCode().equals(KeyCode.F5))
@@ -62,16 +66,19 @@ public class MainController implements Initializable {
         }
     }
     
+    @FXML
     public void back(ActionEvent event)
     {
         web.getEngine().getHistory().go(-1);
     }
     
+    @FXML
     public void forward(ActionEvent event)
     {
         web.getEngine().getHistory().go(1);
     }
     
+    @FXML
     public void plusWeb(ActionEvent event) throws Exception
     {
         Stage plusStage = new Stage();
@@ -80,6 +87,7 @@ public class MainController implements Initializable {
         plusStage.show();
     }
     
+    @FXML
     public void fullScreen(ActionEvent event)
     {
         Stage stage = (Stage) fullScreen.getScene().getWindow();
